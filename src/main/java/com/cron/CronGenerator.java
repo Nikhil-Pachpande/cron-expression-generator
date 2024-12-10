@@ -47,7 +47,7 @@ public class CronGenerator {
     }
 
     private static String handleSpecificDayAtTime(String text) {
-        Pattern pattern = Pattern.compile("every (monday|tuesday|wednesday|thursday|friday|saturday|sunday) at (\\d+)(am|pm)", Pattern.CASE_INSENSITIVE);
+        Pattern pattern = Pattern.compile("every (monday|tuesday|wednesday|thursday|friday|saturday|sunday) at (\\d+)(\\s?)(am|pm)", Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(text);
 
         if (matcher.find()) {
@@ -83,7 +83,7 @@ public class CronGenerator {
     }
 
     private static String handleSpecificDayOfMonth(String text) {
-        Pattern pattern = Pattern.compile("(\\d+)(st|nd|rd|th) day of the month at (\\d+)(am|pm)", Pattern.CASE_INSENSITIVE);
+        Pattern pattern = Pattern.compile("(\\d+)(st|nd|rd|th) day of the month at (\\d+)(\\s?)(am|pm)", Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(text);
 
         if (matcher.find()) {
@@ -104,7 +104,7 @@ public class CronGenerator {
     }
 
     private static String handleSpecificTimeOfDay(String text, String day) {
-        Pattern pattern = Pattern.compile("every day at (\\d+)(am|pm)", Pattern.CASE_INSENSITIVE);
+        Pattern pattern = Pattern.compile("every day at (\\d+)(\\s?)(am|pm)", Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(text);
 
         if (matcher.find()) {
