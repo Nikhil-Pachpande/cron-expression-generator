@@ -1,4 +1,4 @@
-package com.cron;
+package io.github;
 
 public class CronHelper {
 
